@@ -3,396 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Karl Rahner: Mediating Theologian of the 20th Century</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <title>A Student's Guide to Karl Rahner</title>
+    <style>
+        /* 
+         * CSS STYLING SECTION
+         *
+         * Colors Used:
+         *   - Main Background: #FDFDFB (A very light, warm cream)
+         *   - Primary Text & Accent: #34495E (A deep, muted Slate Blue)
+         *   - Secondary Accent & Borders: #A9CCE3 (A softer, lighter Slate Blue)
+         *   - Highlight Background: #EBF5FB (A very light blue, for contrast)
+         *
+         * Fonts Used:
+         *   - Headings: 'Georgia', serif (Classic, readable, and scholarly)
+         *   - Body Text: 'Helvetica Neue', 'Arial', sans-serif (Clean, modern, and highly legible)
+        */
+
+        /* General Body Styling */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #34495E; /* Deep Slate Blue for text */
+            background-color: #FDFDFB; /* Cream background */
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main Container for content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #34495E; /* Dark Slate Blue */
+            color: #FDFDFB; /* Cream text */
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 5px solid #A9CCE3; /* Lighter blue accent */
+        }
+        .header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 3em;
+            margin: 0;
+        }
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 40px 20px;
+            border-bottom: 1px solid #A9CCE3; /* Light blue separator */
+        }
+        .section h2 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #34495E;
+        }
+
+        /* Styling for the introduction box */
+        .intro-box {
+            background-color: #EBF5FB; /* Very light blue highlight */
+            border-left: 5px solid #A9CCE3; /* Lighter blue accent */
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .intro-box p {
+            margin: 0;
+        }
+
+        /* Styling for the main concepts using a flexbox for side-by-side layout */
+        .concept-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px; /* Space between the boxes */
+            justify-content: center;
+        }
+        .concept-card {
+            background-color: #FFFFFF;
+            border: 1px solid #A9CCE3;
+            border-radius: 8px;
+            padding: 25px;
+            flex-basis: 45%; /* Each card takes up about 45% of the width */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .concept-card h3 {
+            font-family: 'Georgia', serif;
+            font-size: 1.8em;
+            margin-top: 0;
+            color: #34495E;
+        }
+
+        /* Illustration Box Styling */
+        .illustration {
+            background-color: #EBF5FB;
+            border: 2px dashed #A9CCE3;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        .illustration h4 {
+            margin-top: 0;
+            font-family: 'Georgia', serif;
+            font-size: 1.3em;
+            color: #34495E;
+        }
+        .illustration p {
+            margin-bottom: 0;
+        }
+
+        /* Timeline Styling */
+        .timeline {
+            list-style: none;
+            padding: 0;
+            position: relative;
+        }
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20%;
+            width: 4px;
+            background-color: #A9CCE3;
+            margin-left: -2px;
+        }
+        .timeline-item {
+            margin-bottom: 30px;
+            position: relative;
+        }
+        .timeline-item:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+        .timeline-year {
+            float: left;
+            width: 20%;
+            text-align: right;
+            padding-right: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #34495E;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 20%;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #34495E;
+            border: 3px solid #FDFDFB;
+            margin-left: -8px;
+        }
+        .timeline-content {
+            float: right;
+            width: 75%;
+            padding-left: 30px;
+        }
+        .timeline-content h5 {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+        }
+        .highlight-vatican {
+            background-color: #EBF5FB;
+            border: 1px solid #A9CCE3;
+            border-radius: 5px;
+            padding: 15px;
+        }
+
+        /* Flowchart Styling */
+        .flowchart {
+            text-align: center;
+            font-family: 'Georgia', serif;
+        }
+        .flowchart-box {
+            background-color: #EBF5FB;
+            border: 2px solid #A9CCE3;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .flowchart-arrow {
+            font-size: 2em;
+            color: #34495E;
+            margin: 5px 0;
+        }
+
+        /* Footer Styling */
+        .footer {
+            background-color: #34495E;
+            color: #FDFDFB;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+    </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="container">
-            <h1 class="main-title">Karl Rahner</h1>
-            <p class="subtitle">Mediating Theologian of the 20th Century (1904-1984)</p>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#overview">Overview</a></li>
-                    <li><a href="#core-concepts">Core Concepts</a></li>
-                    <li><a href="#nature-grace">Nature & Grace</a></li>
-                    <li><a href="#revelation">Revelation</a></li>
-                    <li><a href="#anonymous-christian">Anonymous Christianity</a></li>
-                    <li><a href="#vatican-ii">Vatican II</a></li>
-                </ul>
-            </nav>
-        </div>
+
+    <header class="header">
+        <h1>A Student's Guide to Karl Rahner</h1>
+        <p>Understanding the Theologian of Human Experience</p>
     </header>
 
-    <main class="main-content">
-        <section id="overview" class="section overview-section">
-            <div class="container">
-                <h2>Theological Overview</h2>
-                <div class="intro-content">
-                    <p class="lead">Karl Rahner was arguably the most influential Catholic theologian of the 20th century and certainly the most influential theologian at the Second Vatican Council in the 1960s. As a voluminous theologian with many books and articles, Rahner can best be understood as a <strong>mediating theologian</strong> — always seeking to find a way through where two sides have created intractable theological problems.</p>
-                    
-                    <div class="key-mediations">
-                        <h3>Key Theological Mediations</h3>
-                        <div class="mediation-grid">
-                            <div class="mediation-item">
-                                <h4>God's Sovereignty ↔ Human Freedom</h4>
-                                <p>Rahner argues these cannot be opposed to each other since God created human beings intending them to be with Him from eternity past.</p>
-                            </div>
-                            <div class="mediation-item">
-                                <h4>Old Catholicism ↔ Modernism</h4>
-                                <p>Avoiding both the Vatican I fundamentalist mentality and the complete subsumption of theology into modern thought.</p>
-                            </div>
-                            <div class="mediation-item">
-                                <h4>Barth ↔ Schleiermacher</h4>
-                                <p>Bridging divine revelation (Barth) with human religious experience (Schleiermacher) through transcendental analysis.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="container">
+
+        <!-- SECTION 1: INTRODUCTION -->
+        <section class="section">
+            <h2>Who Was Karl Rahner?</h2>
+            <div class="intro-box">
+                <p><strong>Teacher's Introduction:</strong> Hello, class. Today, we're exploring the ideas of one of the 20th century's most important thinkers, a Catholic priest named Karl Rahner (1904-1984). His goal was to connect our deep questions about life, meaning, and God with the Christian faith. He wasn't interested in theology that was disconnected from real life. He asked: <strong>"How can we, as finite human beings, even begin to know an infinite God?"</strong></p>
             </div>
+            <p>Think of Rahner as a <strong>bridge-builder</strong>. In his time, Catholic thought was often caught between two extremes:</p>
+            <ul>
+                <li><strong>The Fortress:</strong> A defensive approach that wanted to protect old traditions from the modern world at all costs.</li>
+                <li><strong>Total Surrender:</strong> An approach that wanted to change the faith completely to fit in with modern ideas.</li>
+            </ul>
+            <p>Rahner carved a path between these two. He built a theological bridge connecting God's profound mystery with the everyday questions of human life. His work was so groundbreaking that it deeply influenced the major Catholic event of the century: the Second Vatican Council.</p>
         </section>
 
-        <section id="core-concepts" class="section core-concepts-section">
-            <div class="container">
-                <h2>Core Theological Framework</h2>
-                <div class="framework-diagram">
-                    <div class="diagram-title">
-                        <h3>Rahner's Mediating Position</h3>
-                    </div>
-                    
-                    <div class="theological-positions">
-                        <div class="position-card integralism">
-                            <h4>Integralism</h4>
-                            <p>"Preserve the tradition"</p>
-                            <span class="position-description">Vatican I mentality, fundamentalist sensibility</span>
-                        </div>
-                        
-                        <div class="position-card modernism">
-                            <h4>Modernism</h4>
-                            <p>"Accommodate to today"</p>
-                            <span class="position-description">Subsume theology into modern thought</span>
-                        </div>
-                        
-                        <div class="position-card barth">
-                            <h4>Karl Barth</h4>
-                            <p>God simply makes Godself known</p>
-                            <span class="position-description">Emphasis on divine revelation</span>
-                        </div>
-                        
-                        <div class="position-card schleiermacher">
-                            <h4>Schleiermacher</h4>
-                            <p>Humans have "feeling" of God-consciousness</p>
-                            <span class="position-description">Construct categories of religion</span>
-                        </div>
-                    </div>
-                    
-                    <div class="rahner-position">
-                        <div class="rahner-main-card">
-                            <h4>Rahner's Synthesis</h4>
-                            <p><strong>Central Question:</strong> Under what conditions is it even possible for humans to know God?</p>
-                            <div class="rahner-answer">
-                                <p>Humans were created to exist in grace, but <strong>need to receive</strong> God's categorical revelation.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="theology-approach">
-                        <div class="approach-card">
-                            <h4>Theology from Below</h4>
-                            <p>We "receive" not "construct" knowledge of God</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- SECTION 2: CORE CONCEPTS -->
+        <section class="section">
+            <h2>Two Foundational Ideas</h2>
+            <div class="concept-grid">
 
-        <section id="nature-grace" class="section nature-grace-section">
-            <div class="container">
-                <h2>Nature and Grace: The Foundation</h2>
-                <div class="nature-grace-content">
-                    <div class="concept-intro">
-                        <p class="lead">Rahner's theology of nature and grace represents the most enduring aspect of his thought, building upon Thomas Aquinas while incorporating insights from Martin Heidegger's existential analysis.</p>
-                    </div>
-                    
-                    <div class="transcendental-tomism">
-                        <h3>Transcendental Thomism</h3>
-                        <div class="tomism-explanation">
-                            <div class="aquinas-foundation">
-                                <h4>Aquinas Foundation</h4>
-                                <p>Grace builds upon or perfects nature. Human beings are created human by nature, and God places grace upon them to perfect their nature and enable relationship with God.</p>
-                            </div>
-                            <div class="heidegger-influence">
-                                <h4>Heidegger's Influence</h4>
-                                <p>Existential analysis: humans are "beings toward death" who recognize their finitude and must accomplish things in their limited time on earth.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="supernatural-existential">
-                        <h3>The Supernatural Existential</h3>
-                        <div class="existential-explanation">
-                            <p>God gives grace to every human being. This grace builds upon nature and is present in nature, so each human being lives in a graced reality in relationship with God, whether they know it or not.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="fundamental-theology">
-                        <h3>Fundamental Theology</h3>
-                        <div class="fundamental-goals">
-                            <div class="goal-item">
-                                <h4>Primary Goal</h4>
-                                <p>Construct foundations for dogmatic theology by rationally justifying belief in God's revelation in Jesus</p>
-                            </div>
-                            <div class="goal-item">
-                                <h4>Apologetic Work</h4>
-                                <p>Show through philosophical reflection that belief in revelation is reasonable, not arbitrary or a sheer leap of faith</p>
-                            </div>
-                            <div class="goal-item">
-                                <h4>Response to Secularism</h4>
-                                <p>Counter claims by Sartre and Nietzsche that God impedes human existence and autonomy</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="revelation" class="section revelation-section">
-            <div class="container">
-                <h2>Levels of Revelation</h2>
-                <div class="revelation-flowchart">
-                    <div class="revelation-level level-1">
-                        <div class="level-header">
-                            <h3>Level 1: Potentia Obedientialis</h3>
-                            <span class="level-type">Nature</span>
-                        </div>
-                        <div class="level-content">
-                            <p><strong>Definition:</strong> The potency for obedience to God</p>
-                            <p>Human beings are constructed to have relationship with God - this is the essence of being human and part of the image of God.</p>
-                            <ul>
-                                <li>Part of nature, not grace</li>
-                                <li>Contains no real presence of God</li>
-                                <li>No real knowledge of God</li>
-                                <li>Creates restless sense and striving toward God</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="revelation-arrow">↓</div>
-                    
-                    <div class="revelation-level level-2">
-                        <div class="level-header">
-                            <h3>Level 2: Transcendental Revelation</h3>
-                            <span class="level-type">Grace Building Upon Nature</span>
-                        </div>
-                        <div class="level-content">
-                            <p><strong>Definition:</strong> The conditions for the possibility of an experience of God's grace</p>
-                            <p>All human beings have this because of Christ's death and the Holy Spirit's work in the world.</p>
-                            <ul>
-                                <li>God is meeting, with, and in human beings mysteriously</li>
-                                <li>Similar to Wesley's reaction against Calvinism</li>
-                                <li>Supernatural existential - grace can break through explicitly</li>
-                                <li>Not saving grace yet, but an offer of grace</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="revelation-arrow">↓</div>
-                    
-                    <div class="revelation-level level-3">
-                        <div class="level-header">
-                            <h3>Level 3: Categorical Revelation</h3>
-                            <span class="level-type">God Speaking to Persons</span>
-                        </div>
-                        <div class="level-content">
-                            <p><strong>Definition:</strong> God speaking to the person with the character of an event</p>
-                            <p>God makes known something that cannot be known through necessary relation of reality to God and human transcendence.</p>
-                            <div class="categorical-channels">
-                                <h4>Channels Include:</h4>
-                                <ul>
-                                    <li>Many religions of the world (though tainted with error)</li>
-                                    <li>Conscience</li>
-                                    <li>Ordinary events of life</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="revelation-arrow">↓</div>
-                    
-                    <div class="revelation-level level-4">
-                        <div class="level-header">
-                            <h3>Level 4: Public Official Revelation</h3>
-                            <span class="level-type">Christian Faith</span>
-                        </div>
-                        <div class="level-content">
-                            <p><strong>Christ as Omega Point:</strong> The thing to which all human striving moves</p>
-                            <p>God among us - the fulfillment of what God intended from the beginning.</p>
-                            <div class="incarnation-note">
-                                <h4>Key Insight:</h4>
-                                <p>Even if humans hadn't sinned, Jesus Christ would still have come. The Incarnation was always God's plan for God and humans to be together.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="anonymous-christian" class="section anonymous-christian-section">
-            <div class="container">
-                <h2>Anonymous Christianity</h2>
-                <div class="anonymous-christian-content">
-                    <div class="concept-intro">
-                        <p class="lead">One of Rahner's most discussed and controversial concepts addresses the question: What happens to those who receive categorical revelation but never encounter public official Christian revelation?</p>
-                    </div>
-                    
-                    <div class="definition-box">
-                        <h3>Definition</h3>
-                        <p><strong>Anonymous Christianity</strong> means that a person lives in the grace of God and attains salvation outside of explicitly constituted Christianity. They have categorical revelation but not official public revelation of Christianity.</p>
-                    </div>
-                    
-                    <div class="rahner-explanation">
-                        <h3>Rahner's Reasoning</h3>
-                        <blockquote>
-                            <p>"Because I hold that everyone depends on Jesus Christ for salvation on the one hand, and because I hold that many live in the world who have not expressly recognized Jesus Christ, then there remains in my opinion nothing else but to take this postulate of anonymous Christianity."</p>
-                            <cite>— Karl Rahner</cite>
-                        </blockquote>
-                        <p class="explanation-note">Rahner admits he doesn't like the term, but uses it because it captures the reality of many who may be saved by Christ's grace without explicitly knowing they participate in it.</p>
-                    </div>
-                    
-                    <div class="vatican-ii-connection">
-                        <h3>Vatican II Integration</h3>
-                        <div class="council-documents">
-                            <div class="document-reference">
-                                <h4>Lumen Gentium</h4>
-                                <blockquote>
-                                    <p>"Those can attain to everlasting salvation who through no fault of their own do not know the gospel of Christ or his church, yet sincerely seek God... and moved by grace, strive in their deeds to do his will as it is known to them through the dictates of their conscience."</p>
-                                </blockquote>
-                            </div>
-                            
-                            <div class="document-reference">
-                                <h4>Gaudium et Spes</h4>
-                                <blockquote>
-                                    <p>"Since Christ died for all men, we ought to believe that the Holy Spirit in a manner known only to God offers to every man the possibility of being associated with this paschal mystery."</p>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="inclusivism-explanation">
-                        <h3>Christian Inclusivism</h3>
-                        <div class="inclusivism-points">
-                            <div class="point-item">
-                                <h4>Core Principle</h4>
-                                <p>Christ is the only way to salvation, but God can communicate that salvation to persons who have never heard or have received misinformation about Jesus.</p>
-                            </div>
-                            <div class="point-item">
-                                <h4>Future Recognition</h4>
-                                <p>Such persons will at some point come to know Jesus Christ, probably after death.</p>
-                            </div>
-                            <div class="point-item">
-                                <h4>Evangelism Imperative</h4>
-                                <p>This doesn't stop evangelism - Christ is the omega point, and it's good for all humans to move toward explicit understanding of Christ for fulfillment.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="vatican-ii" class="section vatican-ii-section">
-            <div class="container">
-                <h2>Influence on Vatican II</h2>
-                <div class="vatican-ii-content">
-                    <div class="influence-overview">
-                        <p class="lead">As the most influential theologian at the Second Vatican Council, Rahner's theological framework significantly shaped Catholic teaching on salvation, revelation, and the relationship between Christianity and other religions.</p>
-                    </div>
-                    
-                    <div class="key-contributions">
-                        <h3>Key Contributions to Council Documents</h3>
-                        <div class="contribution-grid">
-                            <div class="contribution-item">
-                                <h4>Universal Offer of Grace</h4>
-                                <p>The concept that God's grace is offered to all people, not just explicit Christians, became central to Vatican II's more inclusive approach.</p>
-                            </div>
-                            <div class="contribution-item">
-                                <h4>Conscience and Salvation</h4>
-                                <p>The recognition that those who sincerely follow their conscience can attain salvation, even without explicit knowledge of Christ.</p>
-                            </div>
-                            <div class="contribution-item">
-                                <h4>Religious Freedom</h4>
-                                <p>Theological foundation for respecting other religions while maintaining Christ's unique role in salvation.</p>
-                            </div>
-                            <div class="contribution-item">
-                                <h4>Modern World Engagement</h4>
-                                <p>Framework for engaging with modernity without compromising essential Christian mystery and truth.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>About This Resource</h4>
-                    <p>This webpage presents key concepts from Karl Rahner's theological framework, focusing on his role as a mediating theologian and his influence on 20th-century Catholic thought.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Key Concepts</h4>
+                <!-- CARD 1: SUPERNATURAL EXISTENTIAL -->
+                <div class="concept-card">
+                    <h3>1. The Supernatural Existential</h3>
+                    <p>This might sound like a complex philosophical term, but the idea behind it is both simple and beautiful. Let's break it down:</p>
                     <ul>
-                        <li>Transcendental Thomism</li>
-                        <li>Supernatural Existential</li>
-                        <li>Anonymous Christianity</li>
-                        <li>Fundamental Theology</li>
+                        <li><strong>Existential:</strong> This refers to the very core of our existence—what it means to be a human being.</li>
+                        <li><strong>Supernatural:</strong> This refers to God's grace—God's own life, love, and presence.</li>
                     </ul>
+                    <p>Rahner's revolutionary idea is that God's grace isn't something added to us from the outside, like frosting on a cake. Instead, <strong>God's grace is baked into the very recipe of what it means to be human.</strong> From the moment we exist, we are already living and breathing in God's presence.</p>
+                    
+                    <div class="illustration">
+                        <h4>Illustration: The Fish and the Ocean</h4>
+                        <p>Imagine a fish. It is born in water, it breathes water, it lives and moves entirely within water. The water is the fundamental condition for its existence. The fish might not be consciously thinking about "water" all the time—it's just the reality it lives in.</p>
+                        <p>For Rahner, humanity is the fish, and <strong>God's grace is the ocean</strong>. We are created with a built-in orientation, a deep-seated longing for God. This longing is a permanent part of our human structure, placed there by God. We are beings who are always, in the core of our existence, reaching out toward the mystery we call God, whether we realize it or not.</p>
+                    </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Further Reading</h4>
-                    <p>For deeper study of Rahner's theology, explore his <em>Theological Investigations</em> and <em>Foundations of Christian Faith</em>.</p>
+
+                <!-- CARD 2: ANONYMOUS CHRISTIANITY -->
+                <div class="concept-card">
+                    <h3>2. The "Anonymous Christian"</h3>
+                    <p>This is Rahner's most famous and sometimes controversial idea. It flows directly from the "fish in the ocean" concept.</p>
+                    <p><strong>The Question:</strong> If everyone exists in the "ocean" of God's grace, what about people who have never heard of Jesus or the Church? What about a sincere Buddhist, a kind-hearted atheist, or someone from a remote culture? Can they be saved?</p>
+                    <p><strong>Rahner's Answer:</strong> Yes.</p>
+                    <p>He argued that if a person genuinely follows their conscience, seeks truth, and lives a life of love and self-giving, they are responding to the grace of God that is already active in their life. They may not call that grace "Jesus," but they are accepting God's offer of love in the best way they know how. Rahner called such a person an <strong>"Anonymous Christian."</strong></p>
+
+                    <div class="illustration">
+                        <h4>Illustration: The Anonymous Benefactor</h4>
+                        <p>Imagine an orphan who receives a monthly anonymous donation that pays for her education and living expenses. This gift allows her to grow, learn, and thrive. She doesn't know the benefactor's name, but she gratefully accepts the gift and uses it for good. Her life is fundamentally shaped by this generosity.</p>
+                        <p>One day, she might learn the benefactor's name is "Christos." When she does, she won't feel like she's meeting a stranger. Instead, she'll realize, "So *that* was the name of the one who was helping me all along! Now I can finally thank him properly." For Rahner, Jesus is the ultimate benefactor. An "anonymous Christian" is someone who has been accepting the gift their whole life without yet knowing the giver's name.</p>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Karl Rahner Theology Resource. Educational use.</p>
+        </section>
+
+        <!-- SECTION 3: HOW REVELATION WORKS -->
+        <section class="section">
+            <h2>How God Reaches Us: A Flowchart</h2>
+            <p style="text-align: center;">Rahner saw God's self-revelation as a process. It's not all-or-nothing. It moves from a general, unspoken presence to a specific, historical event.</p>
+            <div class="flowchart">
+                <div class="flowchart-box">
+                    <strong>Level 1: Transcendental Revelation</strong>  
+
+                    <small>(The "Ocean" of Grace)</small>  
+
+                    This is the universal presence of God's grace that every human experiences as a deep longing for truth, love, and meaning. It's the "supernatural existential."
+                </div>
+                <div class="flowchart-arrow">↓</div>
+                <div class="flowchart-box">
+                    <strong>Level 2: Categorical Revelation</strong>  
+
+                    <small>(Moments of Grace in History)</small>  
+
+                    This is when that general grace becomes concrete in a specific event, person, or experience. It can happen through nature, conscience, art, or within other world religions. This is where the "Anonymous Christian" lives.
+                </div>
+                <div class="flowchart-arrow">↓</div>
+                <div class="flowchart-box">
+                    <strong>Level 3: Official Public Revelation</strong>  
+
+                    <small>(The Person of Jesus Christ)</small>  
+
+                    For Rahner, this is the ultimate, definitive, and clearest expression of God's love. In Jesus, God's self-gift is no longer anonymous but has a name and a face. This is the fulfillment toward which all other revelation points.
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- SECTION 4: TIMELINE -->
+        <section class="section">
+            <h2>Timeline of Rahner's Life and Influence</h2>
+            <ul class="timeline">
+                <li class="timeline-item">
+                    <div class="timeline-year">1904</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h5>Born in Freiburg, Germany.</h5>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-year">1922</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h5>Enters the Jesuit Order.</h5>
+                        <p>He begins his deep study of philosophy (especially Kant and Heidegger) and theology (especially Thomas Aquinas).</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-year">1939-1945</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h5>Pastoral Work during WWII.</h5>
+                        <p>This period deepens his focus on faith in the context of real-world suffering, doubt, and human questions.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-year">1962-1965</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="highlight-vatican">
+                            <h5>Key Expert at the Second Vatican Council.</h5>
+                            <p>Rahner is appointed as a theological advisor (<em>peritus</em>). His ideas about grace, the Church, and salvation heavily influence the Council's final documents, pushing the Church toward a more open and hopeful engagement with the modern world.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-year">1976</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h5>Publishes <em>Foundations of Christian Faith</em>.</h5>
+                        <p>This book is a comprehensive summary of his entire theological vision, intended for students and educated readers.</p>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-year">1984</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h5>Dies in Innsbruck, Austria.</h5>
+                        <p>He leaves behind a vast collection of essays and books that continue to challenge and inspire theologians today.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer class="footer">
+        <p>These notes are for educational purposes to make the thought of Karl Rahner accessible to all students.</p>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Add active class to navigation items on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 60) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            document.querySelectorAll('.main-nav a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
