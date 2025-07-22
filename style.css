@@ -1,0 +1,824 @@
+/* Karl Rahner Theology Webpage - Sober & Contemplative Styling */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Sober Color Palette for Theological Content */
+    --primary-bg: #2c2c2c;
+    --secondary-bg: #4a4a4a;
+    --tertiary-bg: #6b7c6b;
+    --light-bg: #f5f3f0;
+    --accent-burgundy: #6b2c3e;
+    --accent-gold: #b8860b;
+    --accent-blue-gray: #5f7a8a;
+    --text-light: #f8f8f8;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --border-bronze: #8b7355;
+    --hover-gold: #d4af37;
+    --shadow-dark: rgba(0, 0, 0, 0.3);
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    
+    /* Typography */
+    --font-serif: 'Crimson Text', Georgia, serif;
+    --font-sans: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Base Typography */
+body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-light);
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; color: var(--accent-gold); }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1.1rem; }
+
+p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--text-light);
+}
+
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--light-bg);
+    margin-bottom: var(--spacing-lg);
+}
+
+strong {
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+/* Header Styles */
+.main-header {
+    background: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--primary-bg) 100%);
+    padding: var(--spacing-xl) 0;
+    text-align: center;
+    border-bottom: 3px solid var(--border-bronze);
+    box-shadow: 0 4px 20px var(--shadow-dark);
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--accent-gold);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: var(--spacing-sm);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--light-bg);
+    margin-bottom: var(--spacing-lg);
+    opacity: 0.9;
+}
+
+/* Navigation Styles */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.main-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-medium);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    background: rgba(184, 134, 11, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Section Styles */
+.section {
+    padding: var(--spacing-xxl) 0;
+    border-bottom: 1px solid rgba(139, 115, 85, 0.3);
+}
+
+.section:nth-child(even) {
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--tertiary-bg) 100%);
+}
+
+.section:nth-child(odd) {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+}
+
+/* Overview Section */
+.overview-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-burgundy) 100%);
+}
+
+.intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.key-mediations {
+    margin-top: var(--spacing-xl);
+}
+
+.mediation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.mediation-item {
+    background: rgba(245, 243, 240, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-bronze);
+    transition: all var(--transition-medium);
+}
+
+.mediation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-dark);
+    border-color: var(--accent-gold);
+}
+
+.mediation-item h4 {
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.3rem;
+}
+
+/* Core Concepts Section */
+.framework-diagram {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.diagram-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.theological-positions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.position-card {
+    background: linear-gradient(135deg, var(--accent-blue-gray) 0%, var(--secondary-bg) 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-bronze);
+    text-align: center;
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.position-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.position-card:hover::before {
+    left: 100%;
+}
+
+.position-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px var(--shadow-dark);
+    border-color: var(--accent-gold);
+}
+
+.position-card h4 {
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-sm);
+}
+
+.position-card p {
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.position-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Specific position card colors */
+.integralism {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2c2c2c 100%);
+}
+
+.modernism {
+    background: linear-gradient(135deg, #b8860b 0%, #8b7355 100%);
+}
+
+.barth {
+    background: linear-gradient(135deg, #5f7a8a 0%, #4a6b7a 100%);
+}
+
+.schleiermacher {
+    background: linear-gradient(135deg, #6b7c6b 0%, #5a6b5a 100%);
+}
+
+/* Rahner's Central Position */
+.rahner-position {
+    margin: var(--spacing-xl) 0;
+    display: flex;
+    justify-content: center;
+}
+
+.rahner-main-card {
+    background: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--primary-bg) 100%);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 3px solid var(--accent-gold);
+    text-align: center;
+    max-width: 600px;
+    box-shadow: 0 10px 40px var(--shadow-dark);
+    position: relative;
+}
+
+.rahner-main-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--accent-gold), var(--hover-gold), var(--accent-gold));
+    border-radius: var(--radius-lg);
+    z-index: -1;
+    animation: borderGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.rahner-answer {
+    background: rgba(0, 0, 0, 0.4);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+    border: 1px solid var(--accent-gold);
+}
+
+.theology-approach {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+.approach-card {
+    background: linear-gradient(135deg, #8b0000 0%, #4b0000 100%);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--accent-gold);
+    text-align: center;
+    max-width: 400px;
+}
+
+/* Nature and Grace Section */
+.nature-grace-section {
+    background: linear-gradient(135deg, var(--tertiary-bg) 0%, var(--secondary-bg) 100%);
+}
+
+.concept-intro {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.transcendental-tomism {
+    margin-bottom: var(--spacing-xl);
+}
+
+.tomism-explanation {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.aquinas-foundation,
+.heidegger-influence {
+    background: rgba(245, 243, 240, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border-left: 4px solid var(--accent-gold);
+}
+
+.supernatural-existential {
+    background: rgba(107, 44, 62, 0.2);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--accent-burgundy);
+    margin: var(--spacing-xl) 0;
+}
+
+.existential-explanation {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.fundamental-theology {
+    margin-top: var(--spacing-xl);
+}
+
+.fundamental-goals {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.goal-item {
+    background: rgba(95, 122, 138, 0.2);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--accent-blue-gray);
+    transition: all var(--transition-medium);
+}
+
+.goal-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+}
+
+/* Revelation Section */
+.revelation-section {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--accent-blue-gray) 100%);
+}
+
+.revelation-flowchart {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.revelation-level {
+    background: rgba(245, 243, 240, 0.1);
+    border: 2px solid var(--border-bronze);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-lg);
+    overflow: hidden;
+    transition: all var(--transition-medium);
+}
+
+.revelation-level:hover {
+    border-color: var(--accent-gold);
+    box-shadow: 0 10px 30px var(--shadow-dark);
+}
+
+.level-header {
+    background: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--secondary-bg) 100%);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border-bronze);
+}
+
+.level-header h3 {
+    margin: 0;
+    color: var(--accent-gold);
+}
+
+.level-type {
+    background: var(--accent-gold);
+    color: var(--primary-bg);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-sm);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.level-content {
+    padding: var(--spacing-lg);
+}
+
+.level-content ul {
+    margin-top: var(--spacing-sm);
+    padding-left: var(--spacing-lg);
+}
+
+.level-content li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-light);
+}
+
+.revelation-arrow {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--accent-gold);
+    margin: var(--spacing-md) 0;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.categorical-channels {
+    margin-top: var(--spacing-md);
+    background: rgba(0, 0, 0, 0.3);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+}
+
+.incarnation-note {
+    margin-top: var(--spacing-md);
+    background: rgba(184, 134, 11, 0.2);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--accent-gold);
+}
+
+/* Anonymous Christian Section */
+.anonymous-christian-section {
+    background: linear-gradient(135deg, var(--secondary-bg) 0%, var(--tertiary-bg) 100%);
+}
+
+.definition-box {
+    background: rgba(107, 44, 62, 0.3);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--accent-burgundy);
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.rahner-explanation {
+    margin: var(--spacing-xl) 0;
+}
+
+blockquote {
+    background: rgba(0, 0, 0, 0.4);
+    padding: var(--spacing-lg);
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-lg) 0;
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+cite {
+    display: block;
+    text-align: right;
+    margin-top: var(--spacing-sm);
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.explanation-note {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-top: var(--spacing-sm);
+}
+
+.vatican-ii-connection {
+    margin: var(--spacing-xl) 0;
+}
+
+.council-documents {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.document-reference {
+    background: rgba(95, 122, 138, 0.2);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--accent-blue-gray);
+}
+
+.document-reference h4 {
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-md);
+}
+
+.inclusivism-explanation {
+    margin-top: var(--spacing-xl);
+}
+
+.inclusivism-points {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.point-item {
+    background: rgba(245, 243, 240, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-bronze);
+    transition: all var(--transition-medium);
+}
+
+.point-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-gold);
+}
+
+.point-item h4 {
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Vatican II Section */
+.vatican-ii-section {
+    background: linear-gradient(135deg, var(--accent-burgundy) 0%, var(--primary-bg) 100%);
+}
+
+.influence-overview {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.contribution-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.contribution-item {
+    background: rgba(245, 243, 240, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--border-bronze);
+    transition: all var(--transition-medium);
+    position: relative;
+    overflow: hidden;
+}
+
+.contribution-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-gold), var(--hover-gold));
+    transform: scaleX(0);
+    transition: transform var(--transition-medium);
+}
+
+.contribution-item:hover::before {
+    transform: scaleX(1);
+}
+
+.contribution-item:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-gold);
+    box-shadow: 0 15px 40px var(--shadow-dark);
+}
+
+.contribution-item h4 {
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Footer Styles */
+.main-footer {
+    background: linear-gradient(135deg, var(--primary-bg) 0%, #1a1a1a 100%);
+    padding: var(--spacing-xxl) 0 var(--spacing-lg);
+    border-top: 3px solid var(--border-bronze);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+}
+
+.footer-section h4 {
+    color: var(--accent-gold);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-light);
+}
+
+.footer-section li::before {
+    content: '→';
+    color: var(--accent-gold);
+    margin-right: var(--spacing-xs);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-bronze);
+    color: var(--text-muted);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .mediation-grid,
+    .theological-positions,
+    .tomism-explanation,
+    .fundamental-goals,
+    .council-documents,
+    .inclusivism-points,
+    .contribution-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rahner-main-card {
+        padding: var(--spacing-lg);
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.3rem; }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .lead {
+        font-size: 1.1rem;
+    }
+    
+    .position-card,
+    .mediation-item,
+    .goal-item,
+    .point-item,
+    .contribution-item {
+        padding: var(--spacing-md);
+    }
+    
+    .revelation-level .level-content {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .main-header,
+    .main-footer {
+        background: white;
+        color: black;
+    }
+    
+    .section {
+        background: white;
+        page-break-inside: avoid;
+    }
+    
+    .position-card,
+    .mediation-item,
+    .revelation-level {
+        border: 2px solid #333;
+        background: white;
+    }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+a:focus,
+button:focus {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-light: #ffffff;
+        --text-dark: #000000;
+        --accent-gold: #ffff00;
+        --border-bronze: #ffffff;
+    }
+}
